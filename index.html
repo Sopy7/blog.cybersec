@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f1115;
+      color: #f5f5f5;
+    }
+    header {
+      background-color: #1c1f26;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #00d4ff;
+    }
+    nav a {
+      color: #f5f5f5;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    nav a:hover {
+      color: #00d4ff;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #1c1f26;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #00d4ff;
+    }
+    .subscription {
+      text-align: center;
+      padding: 2rem;
+      background: #242832;
+      border-radius: 10px;
+    }
+    .subscription input[type="email"] {
+      padding: 0.5rem;
+      width: 60%;
+      border: none;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+    }
+    .subscription button {
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background: #00d4ff;
+      color: #0f1115;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1c1f26;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cybersecurity Hub</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#subscribe">Subscribe</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Rotating window section -->
+    <section id="home">
+      <div class="card">
+        <h2>Latest Forum Posts</h2>
+        <p id="forum-post">Loading cybersecurity updates...</p>
+      </div>
+    </section>
+
+    <!-- Blog section -->
+    <section id="blog">
+      <div class="card">
+        <h2>Why Strong Passwords Matter</h2>
+        <p>Hackers often exploit weak or reused passwords. Learn how to strengthen your accounts and protect your data.</p>
+      </div>
+      <div class="card">
+        <h2>Top 5 Security Breaches of 2025</h2>
+        <p>A quick look into the most impactful cyberattacks this year and what we can learn from them.</p>
+      </div>
+    </section>
+
+    <!-- Subscription section -->
+    <section id="subscribe">
+      <div class="subscription">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to get the latest news and tips on cybersecurity.</p>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Cybersecurity Hub. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Simple rotation of example forum posts
+    const posts = [
+      "[Forum] New phishing scam targets banking apps.",
+      "[Forum] Best practices to secure your Wi-Fi router.",
+      "[Forum] Zero-day vulnerability discovered in web browsers.",
+      "[Forum] Tips for securing your social media accounts."
+    ];
+
+    let index = 0;
+    function rotatePosts() {
+      document.getElementById('forum-post').innerText = posts[index];
+      index = (index + 1) % posts.length;
+    }
+    setInterval(rotatePosts, 4000);
+    rotatePosts(); // initial call
+  </script>
+</body>
+</html>
